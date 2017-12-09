@@ -28,4 +28,5 @@ self.network = regression(self.network,
 4) To run the code: run the below command by going into emotion_recognition folder
    python -c "import model.emotion_cnn"
 <h2>Results</h2>
-The accuracy of the model is 75%. I implemented a live application too through which you can detect emotions through a live video feed by using webcam
+The accuracy of the model is 75%. 
+I implemented a live application too through which you can detect emotions through a live video feed by using webcam
