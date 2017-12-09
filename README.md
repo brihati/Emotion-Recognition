@@ -7,26 +7,25 @@ In the preprocessing step, I scaled the images using standard deviation which wa
 
 <h2> CNN Model</h2>
 
-self.network = input_data(shape = [None, SIZE_FACE, SIZE_FACE, 1],
-                              data_preprocessing = img_preProcess)
-self.network = conv_2d(self.network, 64, 5, activation = 'relu')
-self.network = max_pool_2d(self.network, 3, strides = 2)
-self.network = conv_2d(self.network, 64, 5, activation = 'relu')
-self.network = max_pool_2d(self.network, 3, strides = 2)
-self.network = conv_2d(self.network, 128, 4, activation = 'relu')
-self.network = dropout(self.network, 0.3)
-self.network = fully_connected(self.network, 3072, activation = 'relu')
-self.network = fully_connected(self.network, len(EMOTIONS), activation ='softmax')
-self.network = regression(self.network,
+<p>self.network = input_data(shape = [None, SIZE_FACE, SIZE_FACE, 1],
+                              data_preprocessing = img_preProcess)</p>
+<p>self.network = conv_2d(self.network, 64, 5, activation = 'relu')</p>
+<p>self.network = max_pool_2d(self.network, 3, strides = 2)</p>
+<p>self.network = conv_2d(self.network, 64, 5, activation = 'relu')</p>
+<p>self.network = max_pool_2d(self.network, 3, strides = 2)</p>
+<p>self.network = conv_2d(self.network, 128, 4, activation = 'relu')</p>
+<p>self.network = dropout(self.network, 0.3)</p>
+<p>self.network = fully_connected(self.network, 3072, activation = 'relu')</p>
+<p>self.network = fully_connected(self.network, len(EMOTIONS), activation ='softmax')</p>
+<p>self.network = regression(self.network,
   optimizer = 'momentum',
-  loss = 'categorical_crossentropy',learning_rate=0.001)
+  loss = 'categorical_crossentropy',learning_rate=0.001)</p>
 
 <h2>Usage</h2>
-1) Install python3, tensorflow, anaconda and pandas in your system.
-2) The default configuration used for the training can be seen in emotion_cnn.py
-3) The dataset has 11179 images in total in which 20% is validation images and rest 80 validation images
-4) To run the code: run the below command by going into emotion_recognition folder
+<p>1) Install python3, tensorflow, anaconda and pandas in your system.</p>
+<p>2) The default configuration used for the training can be seen in emotion_cnn.py</p>
+<p>3) The dataset has 11179 images in total in which 20% is validation images and rest 80 validation images</p>
+<p>4) To run the code: run the below command by going into emotion_recognition folder</p>
    python -c "import model.emotion_cnn"
 <h2>Results</h2>
-The accuracy of the model is 75%. 
-I implemented a live application too through which you can detect emotions through a live video feed by using webcam
+The accuracy of the model is 75%. I implemented a live application too through which you can detect emotions through a live video feed by using webcam
